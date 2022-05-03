@@ -6,7 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.jpmc.data.repo.SchoolsListRepoImpl
+import com.example.jpmc.data.repo.SchoolsListRepo
 import com.example.jpmc.di.util.DefaultDispatcher
 import com.example.jpmc.ui.schools_list.core.SchoolsListUiState
 import com.example.jpmc.ui.schools_list.core.SchoolsState
@@ -19,8 +19,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SchoolsListViewModel @Inject constructor(
-    private val repo: SchoolsListRepoImpl,
-    private val savedStateHandle: SavedStateHandle,
+    private val repo: SchoolsListRepo,
     @DefaultDispatcher val defaultDispatcher: CoroutineDispatcher
 ): ViewModel() {
 

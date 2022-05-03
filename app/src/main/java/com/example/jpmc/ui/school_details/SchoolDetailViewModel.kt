@@ -5,14 +5,12 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.jpmc.data.model.SchoolsSatRemote
-import com.example.jpmc.data.repo.SchoolsListRepoImpl
+import com.example.jpmc.data.repo.SchoolsListRepo
 import com.example.jpmc.di.util.DefaultDispatcher
 import com.example.jpmc.ui.school_details.core.SchoolDetailUiState
-import com.example.jpmc.util.Resource
 import com.example.jpmc.util.Status
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -20,7 +18,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SchoolDetailViewModel @Inject constructor(
-    private val repo: SchoolsListRepoImpl,
+    private val repo: SchoolsListRepo,
     savedStateHandle: SavedStateHandle,
     @DefaultDispatcher val defaultCoroutineDispatcher: CoroutineDispatcher
 ) : ViewModel() {
