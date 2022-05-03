@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">jpmc</string>
+    <string name="schools_ls_error">Error in retrieving list</string>
+</resources>
