@@ -1,5 +1,6 @@
 package com.example.jpmc.ui.school_details.components
 
+import android.util.Log
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -42,8 +43,51 @@ fun SchoolDetailItem(
                 .background(Color(Blue700.toArgb()))
                 .padding(4.dp)
         ) {
+            Log.w("UiUi", sat!!.toString())
+            if (sat != null && sat.dbn!!.isNotEmpty() && sat.schoolName!!.isNotEmpty()) {
+                Text(
+                    text = "Num of test takers: "+sat.numOfSatTestTakers.toString() ?: "No SAT Data Available",
+                    style = MaterialTheme.typography.h6,
+                    color = Color.Cyan,
+                    maxLines = 1,
+                    overflow = TextOverflow.Visible
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Divider()
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "Critical reading: "+sat.satCriticalReadingAvgScore.toString(),
+                    style = MaterialTheme.typography.h6,
+                    color = Color.Cyan,
+                    maxLines = 1,
+                    overflow = TextOverflow.Visible
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Divider()
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "Math Average Score: "+sat.satMathAvgScore.toString() ?: "No SAT Data Available",
+                    style = MaterialTheme.typography.h6,
+                    color = Color.Cyan,
+                    maxLines = 1,
+                    overflow = TextOverflow.Visible
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Divider()
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "Writing Average score: "+sat.satWritingAvgScore.toString() ?: "No Sat Data Available",
+                    style = MaterialTheme.typography.h6,
+                    color = Color.Cyan,
+                    maxLines = 1,
+                    overflow = TextOverflow.Visible
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Divider()
+                Spacer(modifier = Modifier.height(8.dp))
+            }
             Text(
-                text = school.schoolName.toString(),
+                text = "School name: "+school.schoolName.toString(),
                 style = MaterialTheme.typography.h6,
                 color = Color.Cyan,
                 maxLines = 1,
@@ -51,8 +95,9 @@ fun SchoolDetailItem(
             )
             Spacer(modifier = Modifier.height(8.dp))
             Divider()
+            Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = school.website.toString(),
+                text = "Website: ${school.website.toString()}",
                 style = MaterialTheme.typography.h6,
                 color = Color.Cyan,
                 maxLines = 1,
@@ -60,8 +105,29 @@ fun SchoolDetailItem(
             )
             Spacer(modifier = Modifier.height(8.dp))
             Divider()
+            Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = school.attendanceRate.toString(),
+                text = "Attendance rate: ${school.attendanceRate.toString()}",
+                style = MaterialTheme.typography.h6,
+                color = Color.Cyan,
+                maxLines = 1,
+                overflow = TextOverflow.Visible
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Divider()
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = "Interests: ${school.interest1.toString()}",
+                style = MaterialTheme.typography.h6,
+                color = Color.Cyan,
+                maxLines = 1,
+                overflow = TextOverflow.Visible
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Divider()
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = "Total Students: ${school.totalStudents.toString()}",
                 style = MaterialTheme.typography.h6,
                 color = Color.Cyan,
                 maxLines = 1,

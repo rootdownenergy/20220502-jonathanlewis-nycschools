@@ -1,6 +1,7 @@
 package com.example.jpmc.di
 
 import com.example.jpmc.data.net.SchoolsApi
+import com.example.jpmc.data.repo.SchoolsListRepo
 import com.example.jpmc.data.repo.SchoolsListRepoImpl
 import dagger.Module
 import dagger.Provides
@@ -14,7 +15,7 @@ import javax.inject.Singleton
 object AppModule {
     @Provides
     @Singleton
-    fun provideSchoolsListRepo(api: SchoolsApi): SchoolsListRepoImpl {
-        return SchoolsListRepoImpl(api)
-    }
+    fun provideSchoolsListRepo(
+        api: SchoolsApi
+    ) = SchoolsListRepoImpl(api) as SchoolsListRepo
 }
